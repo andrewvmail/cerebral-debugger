@@ -28,6 +28,9 @@ export default connect(
     propsToggled: signal`propsToggled`,
     mutationClicked: signal`mutationClicked`,
     pathClicked: signal`pathClicked`,
+    getIps: signal`getIps`,
+    ip: state`ip`,
+    port: state`config.port`,
   },
   class Signal extends Component {
     constructor(props) {
@@ -203,9 +206,26 @@ export default connect(
         </div>
       )
     }
+
     render() {
       if (!this.props.signal) {
-        return <span className="signal-empty">No sequences yet...</span>
+        return (
+          <div>
+            {!this.props.ip && (
+              <button
+                onClick={() => {
+                  console.log('onclick')
+                  this.props.getIps()
+                }}
+              >
+                Get Local Ip as QR
+              </button>
+            )}
+            <span className="signal-empty">No sequences yet...</span>
+            <span className="signal-empty">{this.props.ip}</span>
+            <div id="qrContainer" />
+          </div>
+        )
       }
 
       return (

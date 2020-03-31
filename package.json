@@ -74,6 +74,7 @@
         "inferno": "^5.0.1",
         "inferno-create-element": "^5.0.4",
         "prismjs": "^1.13.0",
+        "qrcode-generator": "^1.4.4",
         "traverse": "^0.6.6",
         "ws": "^5.1.0"
     },

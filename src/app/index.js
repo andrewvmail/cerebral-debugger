@@ -37,8 +37,10 @@ export default config =>
       searchComponentValue: '',
       expandedPaths: [],
       hasCreatedSignalTest: false,
+      ip: '',
     },
     signals: {
+      getIps: sequences.getIps,
       pageChanged: sequences.changePage,
       escPressed: sequences.emptySearchValue,
       searchValueChanged: sequences.changeSearchValue,
